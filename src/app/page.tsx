@@ -47,7 +47,7 @@ function LP() {
 
         return (  
           <div key={season.artistName} className='text-xl w-1/4 text-left z-30 font-[Inter]   flex-col flex'>
-            <a className='text-[2rem] font-[Coral] uppercase no-underline' href={season.artistLink}>{season.artistName}'s</a>
+            <a className='text-[2rem] font-[Coral] uppercase no-underline' href={season.artistLink}>{season.artistName}&apos;s</a>
             <p className='italic p-0 mt-0'>{season.workName}</p>
             <p className='m-0 text-[1rem]'>{formatDate(season.launchDate)} - {formatDate(endDate)}</p>
             <a className='no-underline text-[1rem] ' href={season.locationGoogleMapsLink}>{season.location}</a>
