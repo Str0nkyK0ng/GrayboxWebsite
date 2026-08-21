@@ -6,9 +6,19 @@
   --foreground-rgb: 0, 0, 0;
 }
 
+/* globals.css */
+@keyframes spriteX { to { background-position-x: calc(-1 * var(--cols) * var(--tile)); } }
+@keyframes spriteY { to { background-position-y: calc(-1 * var(--rows) * var(--tile)); } }
+
 @font-face {
   font-family: 'Coral';
   src: url('/fonts/CoralPixels-Regular-Mono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rubik';
+  src: url('/fonts/RubikPixels-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

@@ -14,6 +14,7 @@ const config: Config = {
     extend: {
       colors: {
         offWhite: '#ACACAC',
+        grayboxYellow: '#FFC500',
       },
       typography: {
         invert: {

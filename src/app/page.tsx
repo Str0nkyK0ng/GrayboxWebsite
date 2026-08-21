@@ -15,6 +15,10 @@ interface Season{
   img:string;
   locationGoogleMapsLink:string;
   launchDate: Date,
+  coordinates: {
+    long:number,
+    lat:number,
+  }
 }
 
 let Seasons: Season[] = [
@@ -26,6 +30,10 @@ let Seasons: Season[] = [
     workName: 'may 9 2025',
     launchDate: new Date("10-1-26"),
     location: 'Vidiots, CA, Eagle Rock',
+    coordinates: {
+      long:-118.2177014,
+      lat: 34.1349023
+    },
     img: 'https://img.itch.zone/aW1nLzIxMTA3OTE2LnBuZw==/347x500/sQhd%2BY.png',
     locationGoogleMapsLink: 'https://www.google.com/maps/place/Vidiots/@34.1349827,-118.2152474,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgMCYrMe55AE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHRPTWnObLWN42hvxctcjtHxZOGo0wkEiband6Q2P08qvoVtY_kIW6NDVphwgID4Tfd-a9vVjH87E_kygPdnII2lg3JM8RSFfR343nyvJpiRms8Sxt1uGJsU72uUZiZIbGV4WTeYryr1LA%3Dw203-h270-k-no!7i4284!8i5712!4m7!3m6!1s0x80c2a4d5226aee75:0x404c78e5bf636379!8m2!3d34.1349023!4d-118.2151265!10e5!16s%2Fg%2F1tfwdrv1?entry=ttu&g_ep=EgoyMDI2MDgxMC4wIKXMDSoASAFQAw%3D%3D'
   }
@@ -34,7 +42,13 @@ let Seasons: Season[] = [
 function LP() {
   return (
     <NotesLayout>
-      <PixelCube color="#FFC500" pixelSize={10} speed={1} />
+      <PixelCube />
+      <div className='text-2xl py-[10%] font-[Coral] text-center w-full px-[20rem]'>
+        <p>Installed in a new location across LA every three months, the Graybox Arcade features work by artists
+      pushing the boundaries of experimental games.</p>
+      <p
+      > We bring experimental games outside of the confines of sterile, while-walled galleries.</p>
+      </div>
       {Seasons.map(season => {
         const endDate = new Date(season.launchDate);
         endDate.setMonth(endDate.getMonth() + 3);
@@ -46,19 +60,25 @@ function LP() {
           }).format(date);
 
         return (  
-          <div key={season.artistName} className='text-xl w-1/4 text-left z-30 font-[Inter]   flex-col flex'>
-            <a className='text-[2rem] font-[Coral] uppercase no-underline' href={season.artistLink}>{season.artistName}&apos;s</a>
-            <p className='italic p-0 mt-0'>{season.workName}</p>
-            <p className='m-0 text-[1rem]'>{formatDate(season.launchDate)} - {formatDate(endDate)}</p>
-            <a className='no-underline text-[1rem] ' href={season.locationGoogleMapsLink}>{season.location}</a>
-            <p className=''>{season.workDescription}</p>
+          <div className=' flex w-full flex-row space-x-[5rem] ' key={season.artistName}>
+            <div  className='text-xl col-span-1 w-1/2 pt-50 items-left z-30 font-[Inter]   flex-col flex'>
+              <a className='text-[2rem] font-[Coral] uppercase no-underline' href={season.artistLink}>SEASON ONE: {season.artistName}</a>
+              <p className='italic p-0 mt-0'>{season.workName}</p>
+              <p className='m-0 text-[1rem]'>{formatDate(season.launchDate)} - {formatDate(endDate)}</p>
+              <a className='no-underline text-[1rem] ' href={season.locationGoogleMapsLink}>{season.location}</a>
+              <p className=''>{season.workDescription}</p>
+              <img src={season.img} className='max-h-fit max-w-fit'></img>
+            </div>
+          <CrunchMap lat={34.1349023} lon={-118.2177014} res={90} color="#ACACAC" markerColor="#FFC500"       
+          className='col-span-1 h-auto w-1/2 border-[3px]'
 
-            <img src={season.img} className='max-h-fit max-w-fit'></img>
+            /> 
           </div>
+
         );
       })}
       <div>
-      </div>
+        </div>
     </NotesLayout>
   );
 }
