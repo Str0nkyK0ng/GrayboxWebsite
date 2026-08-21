@@ -6,7 +6,7 @@ function PixelCube() {
   const cols = 8;
   const rows= 6;
   return (
-<div className="grid place-items-center leading-[12rem] text-[#ACACAC]">
+<div className="grid place-items-center leading-[15rem] text-[#ACACAC]">
   <div className="[grid-area:1/1] z-0">
     <p className="text-center m-0 font-[Coral] text-[18rem]">GRAYBOX</p>
     <p className="text-center m-0 font-[Coral] text-[18rem]">ARCADE</p>

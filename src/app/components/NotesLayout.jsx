@@ -11,7 +11,7 @@ import Layout from './template';
 function NotesLayout({ children }) {
   return (
     <Layout>
-      <article className='prose font-[WorkSans] prose-invert max-w-none'>{children}</article>
+      <article className='prose font-[WorkSans] flex-col space-y-[20%] flex prose-invert max-w-none'>{children}</article>
     </Layout>
   );
 }

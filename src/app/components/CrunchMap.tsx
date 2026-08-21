@@ -389,6 +389,8 @@ type CanvasProps = Omit<
 interface CommonProps extends CanvasProps {
   /** Metres across the square view. Default 1200. */
   span?: number;
+  locationName:string;
+   address: string;
   /** Cells per side. Default 64. */
   res?: number;
   /** Street colour, hex. Background is always transparent. Default "#ffffff". */
@@ -415,8 +417,7 @@ interface CommonProps extends CanvasProps {
 /** Either coordinates or an address, not both. */
 export type CrunchMapProps = CommonProps &
   (
-    | { lat: number; lon: number; address?: never }
-    | { address: string; lat?: never; lon?: never }
+    { lat: number; lon: number; address: string }
   );
 
 export default function CrunchMap({
@@ -426,6 +427,7 @@ export default function CrunchMap({
   span = 1200,
   res = 64,
   color = "#ffffff",
+  locationName,
   markerColor,
   markerSize = 3,
   weight = 1,
@@ -508,9 +510,10 @@ export default function CrunchMap({
     const ctx = context2d(cv);
     ctx.clearRect(0, 0, res, res);
     if (!frame || frame.mask.length !== res * res) return;
+    ctx.scale(10, 10);
 
     const { mask, box, at } = frame;
-    const img = ctx.createImageData(res, res);
+    const img = ctx.createImageData(res,res);
     const [r, g, b] = parseHex(color);
     for (let i = 0; i < mask.length; i++) {
       if (!mask[i]) continue;
@@ -544,7 +547,6 @@ export default function CrunchMap({
         }
       }
     }
-
     ctx.putImageData(img, 0, 0);
     cbs.current.onRender?.({ mask, res, canvas: cv, marker: inGrid ? marker : null });
   }, [frame, res, color, markerColor, markerSize]);
@@ -552,12 +554,23 @@ export default function CrunchMap({
   useEffect(paint, [paint]);
 
   return (
+    <div className="w-full h-full grid place-items-center">
+      <div className="[grid-area:1/1] z-10 text-[5rem] text-center mt-0 items-center flex flex-col w-full h-full  text-grayboxYellow">
+      <div className="bg-offBlack p-3">
+                <p className="m-0 h-min uppercase font-[Coral]">{locationName}</p>
+        <p className="m-0 p-0 h-min uppercase text-[1rem] font-[Work Sans] ">{address}</p>
+      </div>
+
+
+      </div>
     <canvas
       ref={canvasRef}
+      className="w-full h-ful  [grid-area:1/1] z-0 translate-x-[0px]"
       style={{
         imageRendering: "pixelated",
       }}
-      {...rest}
     />
+    </div>
+
   );
 }
