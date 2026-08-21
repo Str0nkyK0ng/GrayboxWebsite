@@ -6,10 +6,8 @@ function PixelCube({
   pixelSize = 8,
   speed = 1,
   size = 1.7,
-  height = 360,
   paused = false,
-  className,
-  style,
+  className = "",
 }) {
   const mountRef = useRef(null);
   const sceneRef = useRef(null);
@@ -44,10 +42,10 @@ function PixelCube({
     const cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
 
-    const ambient = new THREE.AmbientLight(0xffffff, 0.5);
-    const key = new THREE.DirectionalLight(0xffffff, 0.95);
+    const ambient = new THREE.AmbientLight(0xffffff, 2);
+    const key = new THREE.DirectionalLight(0xffffff, 1);
     key.position.set(3, 4, 2);
-    const rim = new THREE.DirectionalLight(0xffb066, 0.4);
+    const rim = new THREE.DirectionalLight(0xffb066, 1);
     rim.position.set(-3, -1.5, -2);
     scene.add(ambient, key, rim);
 
@@ -109,11 +107,13 @@ function PixelCube({
   }, [color]);
 
   return (
-    <div
-      ref={mountRef}
-      className={className}
-      style={{ width: "100%", height, overflow: "hidden", ...style }}
-    />
+    <div className={`p-0 w-auto  ${className || ""}`}>
+      <div ref={mountRef} className={`absolute inset-0 z-10 w-auto h-[33%]`} />
+      <div className="z-11 pt-[100px] absoluteinset-0 leading-[11rem] text-[#ACACAC]">
+        <p className="text-center m-0 font-[Coral] text-[15rem] ">GRAYBOX</p>
+        <p className="text-center m-0 font-[Coral] text-[15rem]">ARCADE</p>
+      </div>
+    </div>
   );
 }
 

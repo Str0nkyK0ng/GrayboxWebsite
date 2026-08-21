@@ -12,32 +12,13 @@ const config: Config = {
   theme: {
 
     extend: {
+      colors: {
+        offWhite: '#ACACAC',
+      },
       typography: {
         invert: {
           css: {
-            '--tw-prose-body': '#fff',
-            '--tw-prose-headings': '#fff',
-            '--tw-prose-lead': '#fff',
-            '--tw-prose-links': '#fff',
-            '--tw-prose-bold': '#fff',
-            '--tw-prose-counters': '#fff',
-            '--tw-prose-bullets': '#fff',
-            '--tw-prose-hr': '#0000',
-            '--tw-prose-quotes': '#fff',
-            '--tw-prose-quote-borders': '#fff',
-            '--tw-prose-captions': '#fff',
-            '--tw-prose-code': '#7ad31a',
-            '--tw-prose-pre-code': '#7ad31a',
-            '--tw-prose-pre-bg': '#3a3a3ae2',
-            '--tw-prose-th-borders': '#0000',
-            '--tw-prose-td-borders': '#0000',
-            // --tw-prose-* only controls color — font-family needs its own
-            // selectors, so headings pick up the same 'Redaction' display
-            // font used for the logo/event headers elsewhere on the site.
-            h1: { fontFamily: 'Redaction' },
-            h2: { fontFamily: 'Redaction' },
-            h3: { fontFamily: 'Redaction' },
-            h4: { fontFamily: 'Redaction' },
+            '--tw-prose-links': 'offWhite',
           },
         },
       },

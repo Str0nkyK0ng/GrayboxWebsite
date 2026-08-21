@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <link rel='icon' href='/favicon.ico' sizes='any' />
-      <body className='font-[Work Sans] bg-black'>{children}</body>
+      <body className='font-[Work Sans] bg-[#262626] '>{children}</body>
     </html>
   );
 }
