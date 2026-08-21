@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-export default function PixelCube({
+function PixelCube({
   color = "#ff7a18",
   pixelSize = 8,
   speed = 1,
@@ -116,3 +116,5 @@ export default function PixelCube({
     />
   );
 }
+
+export default PixelCube;
