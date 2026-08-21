@@ -79,7 +79,7 @@ function LP() {
     <p>Installed in a new location across LA every three months, the GRAYBOX ARCADE features work by artists
     pushing the boundaries of experimental games.</p>
       <p> We bring experimental games outside of the confines of sterile, while-walled galleries.</p>
-      <p> If you're interested in hosting </p>
+      <p> If you want to host the next season of games. Please reach out. </p>
       {/* <img src='graphics/render.png' className='h-auto w-1/2 max-w-full object-contain border-[2px] border-offWhite'></img> */}
       
       </div>
