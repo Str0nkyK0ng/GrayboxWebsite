@@ -33,7 +33,7 @@ function ProjectDisplay({
             <CrunchMap lat={project.coordinates.lat} lon={project.coordinates.long} res={90} color="#ACACAC" markerColor="#FFC500"
             locationName={project.venue}
             address={project.address}
-            className='col-span-1 h-[35%] w-[35%] border-[3px]'
+            className='col-span-1 w-[40%] max-h-auto border-[3px]'
                 /> 
             </div>
             
