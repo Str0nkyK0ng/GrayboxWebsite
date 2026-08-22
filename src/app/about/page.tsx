@@ -41,18 +41,31 @@ function LP() {
           <p>We are not selling products.</p>
         </div>
 
-        <div className='my-10'>
-          <h3 className='text-4xl font-[Coral] pb-2'>WHO??</h3>
-          <p>The Graybox Collective Consists of:</p>
-          <p className='pl-5'>Vinny Roca</p>
-          <p className='pl-5'>Aidan Strong</p>
-        </div>
 
         <div className='my-10'>
         <h3 className='text-4xl font-[Coral] pb-2'>WHEN??</h3>
         <p className=''>The first season of the Graybox Arcade {new Date()<=new Date('10-1-26')?'will begin':'began'} on October 1st, 2026.</p>
         </div>
 
+
+        <div className='my-10'>
+          <h3 className='text-4xl font-[Coral] pb-2'>HOW??</h3>
+          <p>All cad files?</p>
+          <p>Thanks to:</p>
+          <ul className='pl-5'>
+            <li>UCLA Game Lab</li>
+            <li>Scripps College</li>
+            <li>boshi's place</li>
+          </ul>
+        </div>
+
+
+        <div className='my-10'>
+          <h3 className='text-4xl font-[Coral] pb-2'>WHO??</h3>
+          <p>The Graybox Collective Consists of:</p>
+          <p className='pl-5'>Vinny Roca</p>
+          <p className='pl-5'>Aidan Strong</p>
+        </div>
 
       
       </div>
