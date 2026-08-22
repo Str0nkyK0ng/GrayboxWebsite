@@ -16,6 +16,7 @@ function ProjectDisplay({
             year: 'numeric',
           }).format(date);
     return(
+        <div className='w-fit h-fit'>
           <div className='flex w-full flex-row text-offWhite space-x-[5rem] pt-[5rem] m-0' key={project.artistName}>
             <div  className='text-xl space-y-2 col-span-1 w-1/2 pt-50 items-left z-30 font-[Inter]   flex-col flex'>
             <div className='mb-1'>
@@ -27,14 +28,15 @@ function ProjectDisplay({
 
               <p >{project.artistDescription}</p>
               <p className=''>{project.workDescription}</p>
-              <img src={project.img} className='max-h-fit max-w-fit'></img>
             </div>
 
             <CrunchMap lat={project.coordinates.lat} lon={project.coordinates.long} res={90} color="#ACACAC" markerColor="#FFC500"
             locationName={project.venue}
             address={project.address}
-            className='col-span-1 h-[40%] w-[40%] border-[3px]'
+            className='col-span-1 h-[35%] w-[35%] border-[3px]'
                 /> 
+            </div>
+            
         </div>
     )
 }

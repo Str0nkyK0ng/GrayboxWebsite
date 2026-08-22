@@ -13,7 +13,7 @@ function LP() {
     <Layout>
       <Header></Header>
       {Projects.map(project => {
-        return <ProjectDisplay project={project} key={project.workName}></ProjectDisplay>
+        return <ProjectDisplay project={project} key={project.workName} ></ProjectDisplay>
       })}
     </Layout>
   );
