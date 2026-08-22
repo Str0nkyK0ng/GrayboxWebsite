@@ -17,7 +17,7 @@ function Layout({ children}) {
           className='absolute inset-0 w-full h-full object-cover opacity-[7.5%] -z-10 pointer-events-none'
           style={{ backgroundRepeat: 'repeat', backgroundSize: 'cover' }}
           /> 
-      <div className='relative w-[800px] max-w-full min-h-full mx-auto'>
+      <div className='relative w-[800px] max-w-full min-h-full mx-auto '>
           {children}
       </div>
     </div>
