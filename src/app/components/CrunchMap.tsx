@@ -390,6 +390,7 @@ interface CommonProps extends CanvasProps {
   /** Metres across the square view. Default 1200. */
   span?: number;
   locationName:string;
+  locationLink:string;
    address: string;
   /** Cells per side. Default 64. */
   res?: number;
@@ -426,6 +427,7 @@ export default function CrunchMap({
   address,
   span = 1200,
   res = 64,
+  locationLink = "google.com",
   color = "#ffffff",
   locationName,
   markerColor,
@@ -557,10 +559,10 @@ export default function CrunchMap({
   return (
     <div className={`grid place-items-center ${className}`}>
       <div className="[grid-area:1/1] z-10 text-[2rem] text-center mt-0 items-center flex w-[90%] flex-col  h-full  text-grayboxYellow">
-      <div className="bg-offBlack p-3 w-full">
+      <a className="bg-offBlack p-3 w-full" href={locationLink}>
         <p className="m-0 h-min uppercase font-[Coral]">{locationName}</p>
         <p className="m-0 p-0 h-min w-full uppercase text-[1rem] font-[Work Sans] ">{address}</p>
-      </div>
+      </a>
 
       </div>
     <canvas
