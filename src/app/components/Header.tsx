@@ -8,7 +8,7 @@ function Header(){
     return(
     <div className="w-full h-min pt-[3%] pb-[5%]">
         <div className="[grid-area:1/1]">
-            <p className="m-0 w-full whitespace-nowrap text-center font-[Coral] text-[5.6rem] text-offWhite"> <a className='' href='/'>GRAYBOX ARCADE</a></p>
+            <p className="m-0 w-full whitespace-nowrap hover:text-grayboxYellow text-center font-[Coral] text-[5.6rem] text-offWhite"> <a className='' href='/'>GRAYBOX ARCADE</a></p>
             <div className='flex text-offWhite justify-center  text-[1.5rem] space-x-10 items-center max-h-min pt-0 mt-0 font-[Redaction]'>
                         {
                         ['ABOUT','PROJECTS','CONTACT'].map(str =>{

@@ -18,9 +18,12 @@ function ProjectSpotlight({
               <div className='mb-1 text-[1rem]'>
                 <a className='block text-right w-full whitespace-nowrap text-2xl font-[Redaction] hover:underline text-grayboxYellow uppercase no-underline' href={project.artistLink}>{project.artistName}</a>
                 <p className='italic text-right text-[1.25rem] font-[Redaction]'>{project.workName}</p>
-                <p className='pt-5 no-underline text-[1.25rem] font-[Redaction]  text-grayboxYellow '>{project.venue}</p>
-                <p className='no-underline font-[Redaction] '>{project.address}</p>
-                <p className='no-underline font-[Redaction] '>Los Angeles, CA</p>
+                
+                <a href={project.locationGoogleMapsLink} className='hover:underline no-underline'>
+                  <p className='pt-5 no-underline text-[1.25rem] font-[Redaction]  text-grayboxYellow '>{project.venue}</p>
+                  <p className='no-underline font-[Redaction] '>{project.address}</p>
+                  <p className='no-underline font-[Redaction] '>Los Angeles, CA</p>
+                </a>
                 <p className='text-right text-[1.25rem] pt-5 font-[Redcation]'>{formatDate(project.launchDate)} - {formatDate(endDate)}</p>
               </div>
             </div>
