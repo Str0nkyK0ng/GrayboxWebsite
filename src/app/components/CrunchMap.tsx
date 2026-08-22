@@ -436,6 +436,7 @@ export default function CrunchMap({
   dataUrl = "/streets",
   allowRemote = true,
   onResolve,
+  className="",
   onRender,
   onError,
   style,
@@ -554,11 +555,11 @@ export default function CrunchMap({
   useEffect(paint, [paint]);
 
   return (
-    <div className="w-full h-full grid place-items-center">
-      <div className="[grid-area:1/1] z-10 text-[5rem] text-center mt-0 items-center flex flex-col w-full h-full  text-grayboxYellow">
-      <div className="bg-offBlack p-3">
-                <p className="m-0 h-min uppercase font-[Coral]">{locationName}</p>
-        <p className="m-0 p-0 h-min uppercase text-[1rem] font-[Work Sans] ">{address}</p>
+    <div className={`w-full h-full grid place-items-center ${className}`}>
+      <div className="[grid-area:1/1] z-10 text-[2rem] text-center mt-0 items-center flex w-[90%] flex-col  h-full  text-grayboxYellow">
+      <div className="bg-offBlack p-3 w-full">
+        <p className="m-0 h-min uppercase font-[Coral]">{locationName}</p>
+        <p className="m-0 p-0 h-min w-full uppercase text-[1rem] font-[Work Sans] ">{address}</p>
       </div>
 
 
