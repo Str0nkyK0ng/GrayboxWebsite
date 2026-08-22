@@ -531,25 +531,6 @@ export default function CrunchMap({
     const marker = projectToGrid(at, box, res);
     const inGrid =
       marker.x >= 0 && marker.x < res && marker.y >= 0 && marker.y < res;
-
-    if (markerColor && inGrid) {
-      const [mr, mg, mb] = parseHex(markerColor);
-      const size = Math.max(1, Math.round(markerSize));
-      const back = Math.floor((size - 1) / 2);
-      const x0 = marker.x - back;
-      const y0 = marker.y - back;
-      for (let j = y0; j < y0 + size; j++) {
-        if (j < 0 || j >= res) continue;
-        for (let i = x0; i < x0 + size; i++) {
-          if (i < 0 || i >= res) continue;
-          const o = (j * res + i) * 4;
-          img.data[o] = mr;
-          img.data[o + 1] = mg;
-          img.data[o + 2] = mb;
-          img.data[o + 3] = 255;
-        }
-      }
-    }
     ctx.putImageData(img, 0, 0);
     cbs.current.onRender?.({ mask, res, canvas: cv, marker: inGrid ? marker : null });
   }, [frame, res, color, markerColor, markerSize]);
@@ -557,22 +538,13 @@ export default function CrunchMap({
   useEffect(paint, [paint]);
 
   return (
-    <div className={`grid place-items-center ${className}`}>
-      <div className="[grid-area:1/1] z-10 text-[2rem] text-center mt-0 items-center flex w-[90%] flex-col  h-full  text-grayboxYellow">
-      <a className="bg-offBlack p-3 w-full" href={locationLink}>
-        <p className="m-0 h-min uppercase font-[Coral]">{locationName}</p>
-        <p className="m-0 p-0 h-min w-full uppercase text-[1rem] font-[Work Sans] ">{address}</p>
-      </a>
 
-      </div>
     <canvas
       ref={canvasRef}
-      className="w-full h-full  [grid-area:1/1] z-0 translate-x-[0px]"
+      className={` ${className}`}
       style={{
         imageRendering: "pixelated",
       }}
     />
-    </div>
-
   );
 }

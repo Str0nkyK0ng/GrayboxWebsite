@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import Header from "./Header";
+import { usePathname } from "next/navigation";
 
 function PixelCube() {
 
@@ -6,16 +8,11 @@ function PixelCube() {
   const cols = 8;
   const rows= 6;
   return (
-<div className="grid place-items-center leading-[15rem] text-[#ACACAC]">
-  <div className="[grid-area:1/1] z-0">
-    <p className="text-center m-0 font-[Coral] text-[18rem]">GRAYBOX</p>
-    <p className="text-center m-0 font-[Coral] text-[18rem]">ARCADE</p>
-  </div>
-
+<div className="grid gap-y-0 items-center w-full  text-[#ACACAC]">
   <div
-    className="[grid-area:1/1] z-10 [image-rendering:pixelated] bg-no-repeat translate-x-[0px] translate-y-[0px]"
+    className="z-10 [grid-area:1/1] [image-rendering:pixelated] bg-no-repeat"
     style={{
-      "--tile": "512px",
+      "--tile": "128px",
       "--cols": cols,
       "--rows": rows,
       width: "var(--tile)",
@@ -25,6 +22,7 @@ function PixelCube() {
       animation: `spriteX ${speed}s steps(${cols}) infinite, spriteY ${speed * rows}s steps(${rows}) infinite`,
     }}
   />
+
 </div>
   );
 }

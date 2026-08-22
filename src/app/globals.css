@@ -10,9 +10,24 @@
 @keyframes spriteX { to { background-position-x: calc(-1 * var(--cols) * var(--tile)); } }
 @keyframes spriteY { to { background-position-y: calc(-1 * var(--rows) * var(--tile)); } }
 
+
 @font-face {
   font-family: 'Coral';
-  src: url('/fonts/CoralPixels-Regular-Mono.ttf') format('truetype');
+  src: url('/fonts/CoralPixels-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Redaction';
+  src: url('/fonts/Redaction50-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Coralc';
+  src: url('/fonts/AcPlus_ToshibaTxL1_8x16.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

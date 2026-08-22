@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Layout from './components/template';
 import Header from './components/Header';
 import Projects from './projects';
-import ProjectDisplay from './components/ProjectDisplay';
+import ProjectSpotlight from './components/ProjectSpotlight';
 
 
 
@@ -12,7 +12,7 @@ function LP() {
   return (
     <Layout>
       <Header></Header>
-        <ProjectDisplay project={Projects[Projects.length-1]}></ProjectDisplay>
+        <ProjectSpotlight project={Projects[Projects.length-1]}></ProjectSpotlight>
     </Layout>
   );
 }
