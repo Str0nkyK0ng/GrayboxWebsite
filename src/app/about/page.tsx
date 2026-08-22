@@ -55,7 +55,7 @@ function LP() {
           <ul className='pl-5'>
             <li>UCLA Game Lab</li>
             <li>Scripps College</li>
-            <li>boshi's place</li>
+            <li>boshi&apos;s place</li>
           </ul>
         </div>
 
