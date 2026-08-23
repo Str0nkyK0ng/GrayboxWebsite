@@ -26,7 +26,7 @@ export let Projects: Project[] = [
     workName: 'Catacombs of Solaris Revisited',
     launchDate: new Date("1-1-27"),
     venue: 'Braindead Studios',
-    address: 'Fairfax, CA',
+    address: '611 N Fairfax Ave',
     coordinates: {
       lat:34.0820184,
       long:-118.3617556,

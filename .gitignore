@@ -40,3 +40,5 @@ next-env.d.ts
 # Some map stuff
 *.geojsonl
 *.pbf
+# generated social post graphics
+/socialMedia/output/
