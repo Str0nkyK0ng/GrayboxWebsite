@@ -17,6 +17,8 @@ function Header(){
                         return <a key={str} href={href} className={`mt-0 transition-color duration-300 hover:text-grayboxYellow ${isActive ? 'text-grayboxYellow' : ''}`}>{str}</a>
                         })
                         }
+                         <a href={'https://www.instagram.com/grayboxla/'} className={`mt-0 transition-color duration-300 hover:text-grayboxYellow `}>INSTAGRAM</a>
+
             </div>
         </div>
     </div>
