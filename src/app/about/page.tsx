@@ -17,7 +17,7 @@ function LP() {
         <div className='my-10'>
           <p>Graybox Arcade is placed in a new location across Los Angeles every three months. 
             The arcade features work by artists pushing the boundaries of experimental games.</p>
-          <p>We have shown work at:</p>
+          <p className='my-10'>We have shown work at:</p>
                  {Projects.map((project)=>{
             return(
               <p className='pl-5' key={project.workName}><a  className='text-grayboxYellow hover:underline no-underline' href={project.locationGoogleMapsLink}>{project.venue}</a></p>
@@ -27,7 +27,7 @@ function LP() {
 
 
         <div className='my-10'>
-          <p>This project is inspired by and in conversation with a variety of spaces for art and games.</p>
+          <p>This project is inspired by, and in conversation with a variety of spaces for art and games.</p>
           {
           [ 'UCLA Game Lab',
             'Boshi\'s Place',
