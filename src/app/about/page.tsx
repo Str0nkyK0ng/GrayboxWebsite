@@ -17,10 +17,10 @@ function LP() {
         <div className='my-10'>
           <p>Graybox Arcade is placed in a new location across Los Angeles every three months. 
             The arcade features work by artists pushing the boundaries of experimental games.</p>
-          <p className='my-10'>We have shown work at:</p>
-                 {Projects.map((project)=>{
+          <p className='mt-10'>We have shown work at:</p>
+            {Projects.map((project)=>{
             return(
-              <p className='pl-5' key={project.workName}><a  className='text-grayboxYellow hover:underline no-underline' href={project.locationGoogleMapsLink}>{project.venue}</a></p>
+              <p className='pl-5 ' key={project.workName}><a  className='text-grayboxYellow hover:underline no-underline' href={project.locationGoogleMapsLink}>{project.venue}</a></p>
             )
         })} 
         </div>
