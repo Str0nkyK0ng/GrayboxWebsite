@@ -12,7 +12,7 @@ function LP() {
   return (
     <Layout>
       <Header></Header>
-      <div className='w-full grid grid-cols-1 sm:grid-cols-7 max-w-4xl text-left text-md md:text-xl text-offWhite font-[Redaction] h-fit'>
+      <div className='w-full grid grid-cols-1 sm:grid-cols-7 max-w-4xl text-left text-md md:text-xl text-offWhite font-[Redaction10] h-fit'>
         <div className='sm:col-span-5 sm:col-start-2 bg-offBlack'>
         <div className='my-10'>
           <p>Graybox Arcade is placed in a new location across Los Angeles every three months. 

@@ -20,7 +20,14 @@
 
 @font-face {
   font-family: 'Redaction';
-  src: url('/fonts/redaction/Redaction10-Regular.otf') format('truetype');
+  src: url('/fonts/redaction/Redaction50-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Redaction10';
+  src: url('/fonts/redaction/Redaction35-Regular.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
