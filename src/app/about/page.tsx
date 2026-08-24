@@ -30,7 +30,7 @@ function LP() {
         <div className='my-10'>
           <p>Our work is constantly inspired by those who came before us, as well as the other contemporaries in our field.</p>
           <p>Thank you to:</p>
-          {['UCLA Game Lab','Boshi\'s Place','Scripps Collge', 'LikeLike', 'Hand Eye Society'].map((project)=>{
+          {['UCLA Game Lab','Boshi\'s Place', 'LikeLike', 'Hand Eye Society'].map((project)=>{
               return(
                 <p key={project}  className='pl-5 text-grayboxYellow ' >{project}</p>
               )
@@ -38,12 +38,10 @@ function LP() {
 
         </div>
 
- 
-
         <div className='my-10'>
           <p>The Graybox Consists of:</p>
-          <p className='pl-5'>Vinny Roca</p>
-          <p className='pl-5'>Aidan Strong</p>
+          <p className='pl-5 text-grayboxYellow'>Vinny Roca</p>
+          <p className='pl-5 text-grayboxYellow'>Aidan Strong</p>
         </div>
 
       

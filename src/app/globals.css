@@ -20,32 +20,7 @@
 
 @font-face {
   font-family: 'Redaction';
-  src: url('/fonts/Redaction50-Regular.otf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Coralc';
-  src: url('/fonts/AcPlus_ToshibaTxL1_8x16.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Rubik';
-  src: url('/fonts/RubikPixels-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Inter';
-  src: url('/fonts/Inter-Variable.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Work Sans';
-  src: url('/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+  src: url('/fonts/redaction/Redaction10-Regular.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
