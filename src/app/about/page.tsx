@@ -11,7 +11,6 @@ import Projects from '../projects';
 function LP() {
   return (
     <Layout>
-      <Header></Header>
       <div className='w-full grid grid-cols-1 sm:grid-cols-7 max-w-4xl text-left text-md md:text-xl text-offWhite font-[Redaction10] h-fit'>
         <div className='sm:col-span-5 sm:col-start-2 bg-offBlack'>
         <div className='my-10'>
@@ -29,16 +28,22 @@ function LP() {
         <div className='my-10'>
           <p>This project is inspired by, and in conversation with a variety of spaces for art and games.</p>
           {
-          [ 'UCLA Game Lab',
-            'Boshi\'s Place',
-            'Killscreen',
-            'Glitch City',
-            'LikeLike',
-            'Hand Eye Society'
+          [
+            { name: 'UCLA Game Lab', href: 'https://games.ucla.edu' },
+            { name: 'Boshi\'s Place', href: 'https://boshis.place/' },
+            { name: 'Killscreen', href: 'https://killscreen.com/' },
+            { name: 'Glitch City', href: 'https://glitch.city/' },
+            { name: 'Babycastles', href: 'https://babycastles.com/' },
+            { name: 'LIKELIKE', href: 'https://likelike.org/' },
+            { name: 'Hand Eye Society', href: 'https://handeyesociety.com/' }
           ]
           .map((project)=>{
               return(
-                <p key={project}  className='pl-5 text-grayboxYellow' >{project}</p>
+                <p key={project.name} className='pl-5'>
+                  <a target="_blank" className='text-grayboxYellow hover:underline no-underline' href={project.href}>
+                    {project.name}
+                  </a>
+                </p>
               )
           })} 
 
@@ -46,8 +51,8 @@ function LP() {
 
         <div className='my-10'>
           <p>Graybox Arcade is run by:</p>
-          <p className='pl-5 text-grayboxYellow'><a href='vinnyroca.info'>Vinny Roca</a></p>
-          <p className='pl-5 text-grayboxYellow'><a href='aidanstrong.info'>Aidan Strong</a></p>
+          <p className='pl-5 text-grayboxYellow hover:underline no-underline'><a target="_blank" href='https://vinnyroca.info'>Vinny Roca</a></p>
+          <p className='pl-5 text-grayboxYellow hover:underline no-underline'><a target="_blank" href='https://aidanstrong.info'>Aidan Strong</a></p>
         </div>
 
       

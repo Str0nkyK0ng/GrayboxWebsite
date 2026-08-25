@@ -31,11 +31,8 @@ function ProjectSpotlight({
           </div>
           <div className='w-full md:w-[71.4286%] md:ml-[14.2857%] items-center text-offWhite mt-2 md:mt-[50px]  bg-offBlack'>
           <div className='text-[1.2rem] font-[Redaction10] space-y-5 p-[10px]'>
-              <p >{project.artistDescription}</p>
-              <p className=''>{project.workDescription}</p>
-              <p className=''>{project.workDescription}</p>
-              <p className=''>{project.workDescription}</p>
-              <p className=''>{project.workDescription}</p>
+              <p className='pb-10 italic'>{project.artistDescription}</p>
+              <p className='pb-10'>{project.workDescription}</p>
             </div>
         </div>
         </div>

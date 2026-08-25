@@ -42,3 +42,6 @@ next-env.d.ts
 *.pbf
 # generated social post graphics
 /socialMedia/output/
+
+# generated from content/projects/*.md — see scripts/generate-projects.ts
+/src/app/projects.generated.ts

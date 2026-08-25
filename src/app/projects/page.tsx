@@ -11,7 +11,6 @@ function LP() {
 
   return (
     <Layout>
-      <Header></Header>
       <div className='space-y-10 flex flex-col'>
               {Projects.map(project => {
         return <ProjectTeaser project={project} key={project.workName} ></ProjectTeaser>

@@ -11,7 +11,6 @@ function LP() {
 
   return (
     <Layout>
-      <Header></Header>
         <ProjectSpotlight project={Projects[Projects.length-1]}></ProjectSpotlight>
     </Layout>
   );

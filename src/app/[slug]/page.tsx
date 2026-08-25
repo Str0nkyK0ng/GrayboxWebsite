@@ -32,7 +32,6 @@ export default async function ProjectPage({
   if (!project) notFound();
   return (
     <Layout>
-      <Header></Header>
         <ProjectSpotlight project={project}></ProjectSpotlight>
     </Layout>
   );

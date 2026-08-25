@@ -18,7 +18,6 @@ function Header(){
                         })
                         }
                          <a href={'https://www.instagram.com/grayboxla/'} className={`mt-0 transition-color duration-300 hover:text-grayboxYellow `}>INSTAGRAM</a>
-
             </div>
         </div>
     </div>
