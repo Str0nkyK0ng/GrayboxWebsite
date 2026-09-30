@@ -30,9 +30,9 @@ function ProjectSpotlight({
               </div>
           </div>
           <div className='w-full md:w-[71.4286%] md:ml-[14.2857%] items-center text-offWhite mt-2 md:mt-[50px]  bg-offBlack'>
-          <div className='text-[1.2rem] font-[Redaction10] space-y-5 p-[10px]'>
-              <p className='pb-10 italic'>{project.artistDescription}</p>
-              <p className='pb-10'>{project.workDescription}</p>
+          <div className='text-[1.2rem] font-[Redaction10] space-y-5 p-[10px] [&_p+p]:mt-5 [&_a]:underline [&_strong]:font-bold [&_ul]:list-disc [&_ol]:list-decimal [&_ul]:pl-6 [&_ol]:pl-6'>
+              <div className='pb-10 italic' dangerouslySetInnerHTML={{ __html: project.artistDescriptionHtml }} />
+              <div className='pb-10' dangerouslySetInnerHTML={{ __html: project.workDescriptionHtml }} />
             </div>
         </div>
         </div>

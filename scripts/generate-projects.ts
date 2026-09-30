@@ -13,6 +13,9 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { micromark } from "micromark";
+import { fromMarkdown } from "mdast-util-from-markdown";
+import { toString } from "mdast-util-to-string";
 
 const CONTENT_DIR = path.join(process.cwd(), "content/projects");
 const OUT_FILE = path.join(process.cwd(), "src/app/projects.generated.ts");
@@ -27,6 +30,18 @@ function extractSection(body: string, heading: string): string {
   const rest = body.slice(match.index + match[0].length);
   const nextHeading = /^##\s/m.exec(rest);
   return (nextHeading ? rest.slice(0, nextHeading.index) : rest).trim();
+}
+
+// Markdown is rendered here (in Node) rather than in the browser so the
+// client bundle doesn't need a markdown parser. Raw HTML in the .md source
+// is escaped (micromark's default), so the output is safe to inject.
+function markdownToHtml(markdown: string): string {
+  return micromark(markdown);
+}
+
+// Plain-text version for places that can't render markup, e.g. <meta>.
+function markdownToText(markdown: string): string {
+  return toString(fromMarkdown(markdown)).replace(/\s+/g, " ").trim();
 }
 
 function slugFromFilename(filename: string): string {
@@ -44,13 +59,17 @@ function generate(): void {
     const raw = fs.readFileSync(path.join(CONTENT_DIR, file), "utf8");
     const { data, content } = matter(raw);
 
+    const artistDescription = extractSection(content, "Artist Description");
+    const workDescription = extractSection(content, "Work Description");
+
     return {
       slug: slugFromFilename(file),
       artistName: data.artistName ?? "",
       artistLink: data.artistLink ?? "",
-      artistDescription: extractSection(content, "Artist Description"),
+      artistDescriptionHtml: markdownToHtml(artistDescription),
       workName: data.workName ?? "",
-      workDescription: extractSection(content, "Work Description"),
+      workDescriptionHtml: markdownToHtml(workDescription),
+      workDescriptionText: markdownToText(workDescription),
       img: data.img ?? "",
       venue: data.venue ?? "",
       address: data.address ?? "",
@@ -72,9 +91,10 @@ export interface RawProject {
   slug: string;
   artistName: string;
   artistLink: string;
-  artistDescription: string;
+  artistDescriptionHtml: string;
   workName: string;
-  workDescription: string;
+  workDescriptionHtml: string;
+  workDescriptionText: string;
   img: string;
   venue: string;
   address: string;

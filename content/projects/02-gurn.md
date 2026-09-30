@@ -1,22 +1,24 @@
 ---
 artistName: gurn group
 artistLink: "https://gurngroup.com"
-workName: may 9 2025
+workName: april 29 2024 (Perfect Dark with superimposed scrolling text)
 launchDate: "10-1-26"
-venue: Vidiots
-address: 4884 N Eagle Rock Blvd
+venue: Untitled Space, UCLA Department of Art
+address: Broad Art Center, 240 Charles E Young Dr N, Los Angeles, CA 90095
 img: "/graphics/gurn/game.png"
-locationGoogleMapsLink: "https://www.google.com/maps/place/Vidiots/@34.1349827,-118.2152474,3a,75y,90t/data=!3m8!1e2!3m6!1sCIHM0ogKEICAgMCYrMe55AE!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAHRPTWnObLWN42hvxctcjtHxZOGo0wkEiband6Q2P08qvoVtY_kIW6NDVphwgID4Tfd-a9vVjH87E_kygPdnII2lg3JM8RSFfR343nyvJpiRms8Sxt1uGJsU72uUZiZIbGV4WTeYryr1LA%3Dw203-h270-k-no!7i4284!8i5712!4m7!3m6!1s0x80c2a4d5226aee75:0x404c78e5bf636379!8m2!3d34.1349023!4d-118.2151265!10e5!16s%2Fg%2F1tfwdrv1?entry=ttu&g_ep=EgoyMDI2MDgxMC4wIKXMDSoASAFQAw%3D%3D"
+locationGoogleMapsLink: "https://www.google.com/maps/place/UCLA+Department+of+Art/data=!4m2!3m1!1s0x0:0x8ab6ee11b6ae711b?sa=X&ved=1t:2428&ictx=111"
 coordinates:
-  lat: 34.027283
-  long: -118.4135427
+  lat: 34.0759441
+  long: -118.440791
 ---
 
 
 ## Artist Description
 
-Gurn Group is a software artist interested in matter and memory. Assemblage-based game development integrating video footage, free 3D assets, and emulated software ('plunderludics'). Gurn Group's work has been exhibited at Babycastles, LIKELIKE, and Boshi's Place.
+Gurn Group is a software artist interested in matter and memory. Assemblage-based game development integrating video footage, free 3D assets, and emulated software ('plunderludics'). Gurn Group's work has been exhibited at Babycastles, LIKELIKE, and Boshi's Place. 
 
 ## Work Description
 
-may 9 2025 was developed using a technique called 'software sampling' / 'plunderludics', which means making new work out of existing video game software. In this case, four separate instances of NBA Basketball 2000 for the PlayStation are filtered and composited together. The four-byte integer at address 0x132BB8 in emulated memory is fixed at value 15728640, which freezes the clock and prevents the basketball game from ever ending. The music is adapted from "Gloria's Step" from Sunday at the Village Vanguard recorded by the Bill Evans Trio.
+*april 29 2024 (Perfect Dark with superimposed scrolling text)* was developed using a technique called 'software sampling' / 'plunderludics', the process of making new work from existing video game software. In this work, scrolling text is superimposed over an emulated and modified version of the Nintendo 64 game, *Perfect Dark* (Rare, 2000). As the game is played, the work tracks the player’s vertical position in emulated memory and uses this value to modify the vertical scroll of the text.
+
+Through adding superimposed scrolling text, Gurn Group creates a tense juxtaposition between the high-stakes action of *Perfect Dark* and a personal narrative about their own relationship with *Perfect Dark*. Through this, Gurn complicates the traditional objectives of play: moving fast and efficiently may yield to a higher score, but skips large portions of the added narrative. Players using the in-game elevator, instead of the stairs, will be unable to read important paragraphs of the added text. Instead of enforcing the *Perfect Dark*'s preestablished feedback loop, Gurn asks players to quickly multi-task between two very different styles of play.

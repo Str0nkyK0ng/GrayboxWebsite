@@ -19,7 +19,7 @@ export async function generateMetadata({
   if (!project) return {};
   return {
     title: project.workName,
-    description: project.workDescription,
+    description: project.workDescriptionText,
   };
 }
 

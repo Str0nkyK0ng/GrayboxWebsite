@@ -9,9 +9,10 @@ import { rawProjects } from "./projects.generated";
 export interface Project {
   artistName: string;
   artistLink: string;
-  artistDescription: string;
+  artistDescriptionHtml: string; // rendered from markdown at generate time
   workName: string;
-  workDescription: string;
+  workDescriptionHtml: string; // rendered from markdown at generate time
+  workDescriptionText: string; // markdown stripped, for <meta> etc.
   img: string;
   venue: string;
   address: string;
