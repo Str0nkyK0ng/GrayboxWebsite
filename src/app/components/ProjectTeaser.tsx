@@ -6,8 +6,6 @@ import { Projects } from '../projects';
 function ProjectTeaser({
     project = Projects[0],
 }){
-        const endDate = new Date(project.launchDate);
-        endDate.setMonth(endDate.getMonth() + 3);
         const formatDate = (date: Date) =>
           `${date.getMonth() + 1}.${date.getDate()}.${String(date.getFullYear()).slice(-2)}`;
     return(
@@ -21,7 +19,7 @@ function ProjectTeaser({
                 <p className='pt-5 no-underline text-[1.25rem] font-[Redaction]  text-grayboxYellow '>{project.venue}</p>
                 <p className='no-underline font-[Redaction] '>{project.address}</p>
                 <p className='no-underline font-[Redaction] '>Los Angeles, CA</p>
-                <p className='text-right text-[1.25rem] pt-5 text-grayboxYellow font-[Redcation]'>{formatDate(project.launchDate)} - {formatDate(endDate)}</p>
+                <p className='text-right text-[1.25rem] pt-5 text-grayboxYellow font-[Redcation]'>{formatDate(project.launchDate)} - {formatDate(project.endDate)}</p>
               </div>
             </div>
       </div>

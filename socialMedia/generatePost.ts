@@ -147,9 +147,7 @@ export async function generatePost(project: Project): Promise<Buffer> {
   ctx.fillText(`${project.venue} // ${project.address}`.toUpperCase(), PADDING, venueLineY);
 
   // Date range, right-aligned, wraps to two lines if it doesn't fit.
-  const endDate = new Date(project.launchDate);
-  endDate.setMonth(endDate.getMonth() + 3);
-  const dateText = `${formatDate(project.launchDate)} - ${formatDate(endDate)}`;
+  const dateText = `${formatDate(project.launchDate)} - ${formatDate(project.endDate)}`;
   ctx.fillStyle = OFF_WHITE;
   ctx.font = '30px Redaction';
   drawRightAlignedDateRange(

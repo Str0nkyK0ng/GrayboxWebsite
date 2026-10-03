@@ -10,22 +10,22 @@
 // running and regenerate on every change under content/projects/ — `npm
 // run dev` does this for you so editing a .md file live-updates the site.
 
-import fs from "node:fs";
-import path from "node:path";
-import matter from "gray-matter";
-import { micromark } from "micromark";
-import { fromMarkdown } from "mdast-util-from-markdown";
-import { toString } from "mdast-util-to-string";
+import fs from 'node:fs';
+import path from 'node:path';
+import matter from 'gray-matter';
+import { micromark } from 'micromark';
+import { fromMarkdown } from 'mdast-util-from-markdown';
+import { toString } from 'mdast-util-to-string';
 
-const CONTENT_DIR = path.join(process.cwd(), "content/projects");
-const OUT_FILE = path.join(process.cwd(), "src/app/projects.generated.ts");
+const CONTENT_DIR = path.join(process.cwd(), 'content/projects');
+const OUT_FILE = path.join(process.cwd(), 'src/app/projects.generated.ts');
 
 function extractSection(body: string, heading: string): string {
   // Match the heading on its own line (not just its leading text) so an
   // empty section doesn't greedily swallow the next "## ..." heading.
-  const headingRe = new RegExp(`^##\\s*${heading}\\s*$`, "im");
+  const headingRe = new RegExp(`^##\\s*${heading}\\s*$`, 'im');
   const match = headingRe.exec(body);
-  if (!match) return "";
+  if (!match) return '';
 
   const rest = body.slice(match.index + match[0].length);
   const nextHeading = /^##\s/m.exec(rest);
@@ -41,40 +41,41 @@ function markdownToHtml(markdown: string): string {
 
 // Plain-text version for places that can't render markup, e.g. <meta>.
 function markdownToText(markdown: string): string {
-  return toString(fromMarkdown(markdown)).replace(/\s+/g, " ").trim();
+  return toString(fromMarkdown(markdown)).replace(/\s+/g, ' ').trim();
 }
 
 function slugFromFilename(filename: string): string {
   // Strip the ".md" extension and an optional leading "01-" ordering prefix.
-  return filename.replace(/\.md$/, "").replace(/^\d+-/, "");
+  return filename.replace(/\.md$/, '').replace(/^\d+-/, '');
 }
 
 function generate(): void {
   const files = fs
     .readdirSync(CONTENT_DIR)
-    .filter((f) => f.endsWith(".md"))
+    .filter((f) => f.endsWith('.md'))
     .sort(); // ordering prefixes (01-, 02-, ...) control display order
 
   const projects = files.map((file) => {
-    const raw = fs.readFileSync(path.join(CONTENT_DIR, file), "utf8");
+    const raw = fs.readFileSync(path.join(CONTENT_DIR, file), 'utf8');
     const { data, content } = matter(raw);
 
-    const artistDescription = extractSection(content, "Artist Description");
-    const workDescription = extractSection(content, "Work Description");
+    const artistDescription = extractSection(content, 'Artist Description');
+    const workDescription = extractSection(content, 'Work Description');
 
     return {
       slug: slugFromFilename(file),
-      artistName: data.artistName ?? "",
-      artistLink: data.artistLink ?? "",
+      artistName: data.artistName ?? '',
+      artistLink: data.artistLink ?? '',
       artistDescriptionHtml: markdownToHtml(artistDescription),
-      workName: data.workName ?? "",
+      workName: data.workName ?? '',
       workDescriptionHtml: markdownToHtml(workDescription),
       workDescriptionText: markdownToText(workDescription),
-      img: data.img ?? "",
-      venue: data.venue ?? "",
-      address: data.address ?? "",
-      locationGoogleMapsLink: data.locationGoogleMapsLink ?? "",
-      launchDate: String(data.launchDate ?? ""),
+      img: data.img ?? '',
+      venue: data.venue ?? '',
+      address: data.address ?? '',
+      locationGoogleMapsLink: data.locationGoogleMapsLink ?? '',
+      launchDate: String(data.launchDate ?? ''),
+      endDate: String(data.endDate ?? ''),
       coordinates: {
         lat: data.coordinates?.lat ?? 0,
         long: data.coordinates?.long ?? 0,
@@ -100,6 +101,7 @@ export interface RawProject {
   address: string;
   locationGoogleMapsLink: string;
   launchDate: string;
+  endDate:string;
   coordinates: { lat: number; long: number };
 }
 
@@ -110,25 +112,27 @@ export const rawProjects: RawProject[] = ${JSON.stringify(projects, null, 2)};
   console.log(
     `generate-projects: wrote ${projects.length} project(s) from content/projects/ -> ${path.relative(
       process.cwd(),
-      OUT_FILE
-    )}`
+      OUT_FILE,
+    )}`,
   );
 }
 
 generate();
 
-if (process.argv.includes("--watch")) {
-  console.log(`generate-projects: watching ${path.relative(process.cwd(), CONTENT_DIR)} for changes...`);
+if (process.argv.includes('--watch')) {
+  console.log(
+    `generate-projects: watching ${path.relative(process.cwd(), CONTENT_DIR)} for changes...`,
+  );
   let pending: NodeJS.Timeout | null = null;
   fs.watch(CONTENT_DIR, { recursive: true }, (_event, filename) => {
-    if (!filename || !filename.endsWith(".md")) return;
+    if (!filename || !filename.endsWith('.md')) return;
     // Debounce: editors often fire several fs events (write + rename) per save.
     if (pending) clearTimeout(pending);
     pending = setTimeout(() => {
       try {
         generate();
       } catch (err) {
-        console.error("generate-projects: failed to regenerate:", err);
+        console.error('generate-projects: failed to regenerate:', err);
       }
     }, 100);
   });

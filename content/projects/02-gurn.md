@@ -3,7 +3,8 @@ artistName: gurn group
 artistLink: "https://gurngroup.com"
 workName: april 29 2024 (Perfect Dark with superimposed scrolling text)
 launchDate: "10-1-26"
-venue: Untitled Space, UCLA Department of Art
+endDate: "11-1-26"
+venue: Untitled Space, UCLA
 address: Broad Art Center, 240 Charles E Young Dr N, Los Angeles, CA 90095
 img: "/graphics/gurn/game.png"
 locationGoogleMapsLink: "https://www.google.com/maps/place/UCLA+Department+of+Art/data=!4m2!3m1!1s0x0:0x8ab6ee11b6ae711b?sa=X&ved=1t:2428&ictx=111"
