@@ -16,6 +16,10 @@ function LP() {
               into IRL places around Los Angeles. The arcade features work by
               artists exploring the potential of games as an art form.
             </p>
+            <img
+              src='/GrayBox_Person_Small.png'
+              className='px-[15%] py-[5%]'
+            ></img>
             <p className='mt-10'>We have previously brought the arcade to:</p>
             {Projects.map((project) => {
               return (
@@ -34,7 +38,7 @@ function LP() {
           <div className='my-10'>
             <p>
               This project is inspired by, and in conversation with a variety of
-              spaces for art and games.
+              spaces for art and games:
             </p>
             {[
               { name: 'UCLA Game Lab', href: 'https://games.ucla.edu' },
